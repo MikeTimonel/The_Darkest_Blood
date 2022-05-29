@@ -107,12 +107,12 @@ TextureImporter:
       name: Prota_Hit_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 0
         y: 0
-        width: 36
+        width: 60
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,12 +128,12 @@ TextureImporter:
       name: Prota_Hit_1
       rect:
         serializedVersion: 2
-        x: 67
+        x: 60
         y: 0
-        width: 36
+        width: 60
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

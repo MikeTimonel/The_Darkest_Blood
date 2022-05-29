@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 94d1f31ed67c0454db8942625716da08
+guid: 3faaa1e2f84b6b64681f22e630ef2ec0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prota_Attack_0
+      name: Prota_Fall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 120
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a2128c6a19656f4cb2a38d3a9c31b8f
-      internalID: 193083995
+      spriteID: 169df9ee227ab384ebe4325ccde864f2
+      internalID: 1618118725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Attack_1
+      name: Prota_Fall_1
       rect:
         serializedVersion: 2
         x: 120
@@ -133,20 +133,20 @@ TextureImporter:
         width: 120
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e513ae0c37fb0e408bf72aa7f37650d
-      internalID: 267656001
+      spriteID: ae9447b14fb26844cb1a431e33029ecd
+      internalID: -1263069687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Attack_2
+      name: Prota_Fall_2
       rect:
         serializedVersion: 2
         x: 240
@@ -154,35 +154,14 @@ TextureImporter:
         width: 120
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a2565aa31dfc3f4394d47710b9a1c8f
-      internalID: -210126100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Prota_Attack_3
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 0
-        width: 120
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8a84ee9cf9e65c4c96e023af6fb99b9
-      internalID: -1113382307
+      spriteID: 1c346e547e7bd1e41a736a50ad11c2a1
+      internalID: 671204989
       vertices: []
       indices: 
       edges: []
@@ -198,10 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prota_Attack_0: 193083995
-      Prota_Attack_2: -210126100
-      Prota_Attack_3: -1113382307
-      Prota_Attack_1: 267656001
+      Prota_Fall_0: 1618118725
+      Prota_Fall_1: -1263069687
+      Prota_Fall_2: 671204989
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
