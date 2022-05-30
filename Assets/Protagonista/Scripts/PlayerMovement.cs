@@ -29,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool jump = false;
 
+    [Header("Dash")]
+
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,14 +47,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDashing){
+            return;
+        }
+
         horizontalMovement = Input.GetAxisRaw("Horizontal") * speedMovement;
 
         if(Input.GetButtonDown("Jump")){
             jump = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){ 
+            StartCoroutine(Dash());
+        }
     }
 
     void FixedUpdate(){
+
+        if(isDashing){
+            return;
+        }
         isOnGround = Physics2D.OverlapBox(groundController.position, sizeBox, 0f, typeGround);
         //Movent
         Move(horizontalMovement * Time.fixedDeltaTime, jump);
@@ -83,5 +103,18 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos(){
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundController.position, sizeBox);
+    }
+
+    private IEnumerator Dash(){
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb2D.gravityScale;
+        rb2D.gravityScale = 0f;
+        rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        yield return new WaitForSeconds(dashingTime);
+        rb2D.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
