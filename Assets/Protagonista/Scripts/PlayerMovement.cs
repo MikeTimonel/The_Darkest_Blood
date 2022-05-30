@@ -1,0 +1,87 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+
+    private Rigidbody2D rb2D;
+    
+    [Header("Movimiento")]
+
+    private float horizontalMovement = 0f;
+   
+    [SerializeField] private float speedMovement;
+
+    [Range(0.0f, 0.3f)][SerializeField] private float smoothingMoving;
+
+    [SerializeField] private  Vector3 speed = Vector3.zero;
+
+    private bool isRightMove = true;
+
+
+    [Header("Salto")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private LayerMask typeGround;
+    [SerializeField] private Transform groundController;
+    [SerializeField] private Vector3 sizeBox;
+    [SerializeField] private bool isOnGround;
+
+    private bool jump = false;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+ 
+    // Update is called once per frame
+    void Update()
+    {
+        horizontalMovement = Input.GetAxisRaw("Horizontal") * speedMovement;
+
+        if(Input.GetButtonDown("Jump")){
+            jump = true;
+        }
+    }
+
+    void FixedUpdate(){
+        isOnGround = Physics2D.OverlapBox(groundController.position, sizeBox, 0f, typeGround);
+        //Movent
+        Move(horizontalMovement * Time.fixedDeltaTime, jump);
+
+        jump = false;
+    }
+
+    private void Move(float move, bool jumped){
+        Vector3 currentSpeed = new Vector2(move, rb2D.velocity.y);
+        rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, currentSpeed, ref speed, smoothingMoving);
+
+        if (move > 0 && !isRightMove)
+        {
+            Rotate();
+        } 
+        else if(move < 0 && isRightMove)
+        {
+            Rotate();
+        }
+
+        if(isOnGround && jumped){
+            isOnGround = false;
+            rb2D.AddForce(new Vector2(0f, jumpForce));
+        }
+    }
+
+    private void Rotate(){
+        isRightMove = !isRightMove;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale; 
+    }
+
+    private void OnDrawGizmos(){
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(groundController.position, sizeBox);
+    }
+}
