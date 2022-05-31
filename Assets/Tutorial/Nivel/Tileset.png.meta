@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3faaa1e2f84b6b64681f22e630ef2ec0
+guid: e9d84a8fc760f8a459d9468830682c3d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prota_Fall_0
+      name: Tileset_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 120
-        height: 53
+        x: 32
+        y: 224
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 169df9ee227ab384ebe4325ccde864f2
-      internalID: 1618118725
+      spriteID: cfb0e32694f8be04ba9082b8c2e8059f
+      internalID: -1598524978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Fall_1
+      name: Tileset_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 120
-        height: 53
+        x: 192
+        y: 288
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae9447b14fb26844cb1a431e33029ecd
-      internalID: -1263069687
+      spriteID: 3ba91e668fdc8314d8e629c9ded87823
+      internalID: 278110267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Fall_2
+      name: Tileset_2
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 120
-        height: 53
+        x: 288
+        y: 320
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +160,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c346e547e7bd1e41a736a50ad11c2a1
-      internalID: 671204989
+      spriteID: 2d8860be53df42c4a9872e2baf1bfc25
+      internalID: 2049917455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74503466b9c37745bbf56020b4fa2be
+      internalID: -438910613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 262
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175540ecab4c09a41acc314bc2f9c9a5
+      internalID: 172572905
       vertices: []
       indices: 
       edges: []
@@ -177,9 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prota_Fall_0: 1618118725
-      Prota_Fall_1: -1263069687
-      Prota_Fall_2: 671204989
+      Tileset_3: -438910613
+      Tileset_4: 172572905
+      Tileset_1: 278110267
+      Tileset_2: 2049917455
+      Tileset_0: -1598524978
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

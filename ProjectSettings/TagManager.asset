@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Prota
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,13 @@ TagManager:
     locked: 0
   - name: Fondo
     uniqueID: 1723788509
+    locked: 0
+  - name: Adornos
+    uniqueID: 2810353093
+    locked: 0
+  - name: Protagonista
+    uniqueID: 3459463679
+    locked: 0
+  - name: Suelo
+    uniqueID: 734688881
     locked: 0
