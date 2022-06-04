@@ -11,11 +11,15 @@ public class Cat : MonoBehaviour
 
     private Rigidbody2D rb;
     private Rigidbody2D playerRb;
+    private Animator mAnimator;
+    private Transform mTransform;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerRb = player.GetComponent<Rigidbody2D>();
+        mAnimator = gameObject.GetComponent<Animator>();
+        mTransform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -31,8 +35,11 @@ public class Cat : MonoBehaviour
         else 
         {
             NearFollow();
+            mAnimator.SetBool("IsWalking", false);
         
         }
+        Debug.Log("Velocidad: " + rb.velocity);
+
     }
 
     private void FollowPlayer()
@@ -40,16 +47,22 @@ public class Cat : MonoBehaviour
         if (transform.position.x < player.transform.position.x)
         {
             rb.velocity = new Vector2(velocity, rb.velocity.y);
+            mAnimator.SetBool("IsWalking", true);
+            mTransform.eulerAngles = new Vector2(0, 0);
+
         }
-        else if (transform.position.x > player.transform.position.x) 
+        else if (transform.position.x > player.transform.position.x)
         {
             rb.velocity = new Vector2(-velocity, rb.velocity.y);
+            mAnimator.SetBool("IsWalking", true);
+            mTransform.eulerAngles = new Vector2(0, 180);
         }
+        
 
         if (playerRb.velocity == new Vector2(playerRb.velocity.x, 8f))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 8f);
-            
+            Invoke("jumpCat", 0.25f);
+
         }
 
     }
@@ -57,11 +70,18 @@ public class Cat : MonoBehaviour
     {
         if (playerRb.velocity == new Vector2(playerRb.velocity.x, 8f))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 8f);
+            Invoke("jumpCat", 0.25f);
 
         }
         rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
-    
+    private void jumpCat()
+    {
+        mAnimator.SetBool("IsWalking", false);
+        mAnimator.SetTrigger("Jumping");
+        rb.velocity = new Vector2(rb.velocity.x, 8f);
+
+    }
+
 }

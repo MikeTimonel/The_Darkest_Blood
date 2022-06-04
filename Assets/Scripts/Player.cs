@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] float velocity;
     [SerializeField] float jump;
+    public float life;
     
 
  
