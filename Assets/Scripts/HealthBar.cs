@@ -5,21 +5,38 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Image healthImage;
-    private float currentHealth;
-    Player mPlayer;
-    private float maxHealth;
+    
+    private Image healthBar;
+    private Image damageBar;
+    private float damagedHealthBarTimer;
+    private Player player;
 
-    void Start()
+    [SerializeField] private float currentHealth;
+    private float maxHealth;
+    private void Start()
     {
-        healthImage = GetComponent<Image>();
-        mPlayer = FindObjectOfType<Player>();
-        maxHealth = mPlayer.life;
-        
+        healthBar = transform.Find("HealthBar").GetComponent<Image>();
+        damageBar = transform.Find("DamageBar").GetComponent<Image>();
+        player = FindObjectOfType<Player>();
+        maxHealth = player.life;
     }
-    void Update()
+
+    private void Update()
     {
-        currentHealth = mPlayer.life;
-        healthImage.fillAmount = currentHealth / maxHealth;
+        SetHeath(player.life);
+    }
+
+    private void SetHeath(float life) 
+    {
+        currentHealth = life;
+        healthBar.fillAmount = currentHealth / maxHealth;
+        if (healthBar.fillAmount < damageBar.fillAmount)
+        {
+            damageBar.fillAmount -= 0.1f * Time.deltaTime;
+        }
+        else 
+        {
+            damageBar.fillAmount = healthBar.fillAmount;
+        }
     }
 }

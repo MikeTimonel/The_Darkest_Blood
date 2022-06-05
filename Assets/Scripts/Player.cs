@@ -32,11 +32,16 @@ public class Player : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirX * velocity, rb.velocity.y);
-            
-        if (Input.GetKeyDown("space")) {
+        
+
+        if (Input.GetKeyDown("space"))
+        {
             rb.velocity = new Vector2(rb.velocity.x, jump);
-           
+            life -= 10;
+
         }
-       
+        if (Input.GetKeyDown("right")) {
+            life += 10;
+        }
     }
 }

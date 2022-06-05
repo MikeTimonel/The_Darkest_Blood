@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] float rangeFollow;
-    [SerializeField] float velocity;
+    [SerializeField] private GameObject player;
+    [SerializeField] private float rangeFollow;
+    [SerializeField] private float velocity;
 
     private Rigidbody2D rb;
     private Rigidbody2D playerRb;
+
+
     private Animator mAnimator;
     private Transform mTransform;
+
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +26,7 @@ public class Cat : MonoBehaviour
         playerRb = player.GetComponent<Rigidbody2D>();
         mAnimator = gameObject.GetComponent<Animator>();
         mTransform = GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -36,52 +43,59 @@ public class Cat : MonoBehaviour
         {
             NearFollow();
             mAnimator.SetBool("IsWalking", false);
-        
+
+
         }
-        Debug.Log("Velocidad: " + rb.velocity);
+        
 
     }
 
+    // Cuando el gato esta fuera del area de detección
     private void FollowPlayer()
     {
         if (transform.position.x < player.transform.position.x)
         {
-            rb.velocity = new Vector2(velocity, rb.velocity.y);
-            mAnimator.SetBool("IsWalking", true);
-            mTransform.eulerAngles = new Vector2(0, 0);
+            CatMovement(velocity, rb.velocity.y, 0);
 
         }
         else if (transform.position.x > player.transform.position.x)
         {
-            rb.velocity = new Vector2(-velocity, rb.velocity.y);
-            mAnimator.SetBool("IsWalking", true);
-            mTransform.eulerAngles = new Vector2(0, 180);
+            CatMovement(-velocity, rb.velocity.y, 180);
         }
         
 
         if (playerRb.velocity == new Vector2(playerRb.velocity.x, 8f))
         {
-            Invoke("jumpCat", 0.25f);
+            Invoke("CatJump", 0.25f);
 
         }
 
     }
+    // Cuando el gato esta dentro del radio de detección
     private void NearFollow()
     {
         if (playerRb.velocity == new Vector2(playerRb.velocity.x, 8f))
         {
-            Invoke("jumpCat", 0.25f);
+            Invoke("CatJump", 0.25f);
 
         }
         rb.velocity = new Vector2(0, rb.velocity.y);
     }
-
-    private void jumpCat()
-    {
+    // Salto del gato
+    private void CatJump() {
+    
         mAnimator.SetBool("IsWalking", false);
         mAnimator.SetTrigger("Jumping");
         rb.velocity = new Vector2(rb.velocity.x, 8f);
 
     }
+
+    // Movimiento y rotación del sprite del gato
+    private void CatMovement(float vx, float vy, int rotation) {
+        rb.velocity = new Vector2(vx, vy);
+        mAnimator.SetBool("IsWalking", true);
+        mTransform.eulerAngles = new Vector2(0, rotation);
+    }
+    
 
 }
