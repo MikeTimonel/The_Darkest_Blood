@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private Rigidbody2D rb2D;
+    public Animator Protagonista;
     
     [Header("Movimiento")]
 
@@ -38,9 +39,11 @@ public class PlayerMovement : MonoBehaviour
     private float dashingCooldown = 1f;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+        Protagonista = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
  
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")){
             jump = true;
+            Protagonista.SetTrigger("Jump");
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){ 
