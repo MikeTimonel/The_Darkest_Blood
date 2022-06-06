@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Protagonista/Animaciones/Idle/Prota_Idle_0 1.controller.meta
 guid: 0004f2ce28eb613449ad9bdfa080721f
+========
+guid: b1176f8cee77a974d97b25d92e8b2bec
+>>>>>>>> movimiento:Assets/Protagonista/Animaciones/Protagonista.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
