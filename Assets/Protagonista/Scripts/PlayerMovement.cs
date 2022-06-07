@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    //private PotionCount potions;
+    public float life;
+    [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
     
@@ -43,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //potions = FindObjectOfType<PotionCount>();
+        //maxHealth = life;
         Protagonista = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -50,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Healing();
         if(isDashing){
             return;
         }
@@ -58,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")){
             jump = true;
-            //StartCoroutine(SaltoA());
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){
@@ -69,11 +73,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate(){
 
         if(isDashing){
-            Protagonista.SetBool("Dash", true);
-            Protagonista.SetBool("Idle", false);
-            Protagonista.SetBool("Run", false);
-            Protagonista.SetBool("Jump", false);
-            Protagonista.SetBool("Fall", false);
             return;
         }
         isOnGround = Physics2D.OverlapBox(groundController.position, sizeBox, 0f, typeGround);
@@ -125,13 +124,21 @@ public class PlayerMovement : MonoBehaviour
             Protagonista.SetBool("Jump", false);
             Protagonista.SetBool("Fall", false);
         }
-        else if(isOnGround == false)
-        {
-            Protagonista.SetBool("Run", false);
-            Protagonista.SetBool("Fall", true);
-        }
+        //else if(isOnGround == false)
+        //{
+        //    Protagonista.SetBool("Run", false);
+        //    Protagonista.SetBool("Fall", true);
+        //}
     }
+    private void Healing()
+    {
+        //if (Input.GetKeyDown("Q") && potions.potions > 0 && life < maxHealth)
+        //{
+        //    life += 40;
+        //    potions.potions--;
 
+        //}
+    }
     private void Rotate(){
         isRightMove = !isRightMove;
         Vector3 scale = transform.localScale;
@@ -146,13 +153,18 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dash(){
         canDash = false;
         isDashing = true;
+        Protagonista.SetBool("Dash", true);
+        Protagonista.SetBool("Idle", false);
+        Protagonista.SetBool("Run", false);
+        Protagonista.SetBool("Jump", false);
+        Protagonista.SetBool("Fall", false);
         float originalGravity = rb2D.gravityScale;
         rb2D.gravityScale = 0f;
         rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
-        Protagonista.SetBool("Dash", false);
         rb2D.gravityScale = originalGravity;
         isDashing = false;
+        Protagonista.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }

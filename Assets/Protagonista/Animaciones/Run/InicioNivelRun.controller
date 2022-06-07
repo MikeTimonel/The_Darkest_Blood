@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Protagonista
+  m_Name: InicioNivelRun
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -51,8 +51,13 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Protagonista/Animaciones/Run/Protagonista.controller
   m_Name: Inicial niveles
   m_Speed: 0.82
+=======
+  m_Name: Prota_Run
+  m_Speed: 0.41
+>>>>>>> Stashed changes:Assets/Protagonista/Animaciones/Run/InicioNivelRun.controller
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
