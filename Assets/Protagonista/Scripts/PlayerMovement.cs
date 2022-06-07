@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    //private PotionCount potions;
+    public float life;
+    [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
+    public Animator Protagonista;
     
     [Header("Movimiento")]
 
@@ -38,15 +41,20 @@ public class PlayerMovement : MonoBehaviour
     private float dashingCooldown = 1f;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+        //potions = FindObjectOfType<PotionCount>();
+        //maxHealth = life;
+        Protagonista = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
  
     // Update is called once per frame
     void Update()
     {
+        Healing();
         if(isDashing){
             return;
         }
@@ -57,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){ 
+        if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){
             StartCoroutine(Dash());
         }
     }
@@ -74,25 +82,63 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
     }
 
-    private void Move(float move, bool jumped){
+    private void Move(float move, bool jumped) {
         Vector3 currentSpeed = new Vector2(move, rb2D.velocity.y);
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, currentSpeed, ref speed, smoothingMoving);
 
         if (move > 0 && !isRightMove)
         {
             Rotate();
-        } 
-        else if(move < 0 && isRightMove)
+            Protagonista.SetBool("Run", true);
+            Protagonista.SetBool("Idle", false);
+            Protagonista.SetBool("Fall", false);
+            Protagonista.SetBool("Jump", false);
+        }
+        else if (move < 0 && isRightMove)
         {
+            Protagonista.SetBool("Idle", false);
+            Protagonista.SetBool("Jump", false);
+            Protagonista.SetBool("Fall", false);
+            Protagonista.SetBool("Run", true);
             Rotate();
         }
 
-        if(isOnGround && jumped){
+
+        if (isOnGround && jumped){
             isOnGround = false;
+            Protagonista.SetBool("Run", false);
+            Protagonista.SetBool("Jump", true);
+            Protagonista.SetBool("Idle", false);
             rb2D.AddForce(new Vector2(0f, jumpForce));
         }
+        if (isOnGround == true && move ==0)
+        {
+            Protagonista.SetBool("Fall", false);
+            Protagonista.SetBool("Run", false);
+            Protagonista.SetBool("Idle", true);
+            Protagonista.SetBool("Jump", false);
+        }else if (isOnGround == true && move != 0)
+        {
+            Protagonista.SetBool("Run", true);
+            Protagonista.SetBool("Idle", false);
+            Protagonista.SetBool("Jump", false);
+            Protagonista.SetBool("Fall", false);
+        }
+        //else if(isOnGround == false)
+        //{
+        //    Protagonista.SetBool("Run", false);
+        //    Protagonista.SetBool("Fall", true);
+        //}
     }
+    private void Healing()
+    {
+        //if (Input.GetKeyDown("Q") && potions.potions > 0 && life < maxHealth)
+        //{
+        //    life += 40;
+        //    potions.potions--;
 
+        //}
+    }
     private void Rotate(){
         isRightMove = !isRightMove;
         Vector3 scale = transform.localScale;
@@ -104,16 +150,21 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundController.position, sizeBox);
     }
-
     private IEnumerator Dash(){
         canDash = false;
         isDashing = true;
+        Protagonista.SetBool("Dash", true);
+        Protagonista.SetBool("Idle", false);
+        Protagonista.SetBool("Run", false);
+        Protagonista.SetBool("Jump", false);
+        Protagonista.SetBool("Fall", false);
         float originalGravity = rb2D.gravityScale;
         rb2D.gravityScale = 0f;
         rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
         rb2D.gravityScale = originalGravity;
         isDashing = false;
+        Protagonista.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }

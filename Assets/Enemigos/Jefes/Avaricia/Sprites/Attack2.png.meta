@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81c59cd9331399a49b3b8575041ae85f
+guid: 13391d8deacb03f4b863062f97a2e1e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 13
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prota_Dash_0
+      name: Attack2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 80
+        width: 160
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5c5b016eb848044b515347e4f8b874
-      internalID: -2080905222
+      spriteID: 28750092ab18935479c88621b8b6096b
+      internalID: -2108620608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Dash_1
+      name: Attack2_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 160
         y: 0
-        width: 120
-        height: 80
+        width: 160
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c8996086685ed64eab1949c08b730ce
-      internalID: -1743466450
+      spriteID: 42d18b1317247324297d88dc59a221c4
+      internalID: 1347687106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79af0a2084777040a50381435622c80
+      internalID: -1128053519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dbb36f6500b024fad666e7692adb03
+      internalID: -167437579
       vertices: []
       indices: 
       edges: []
@@ -156,8 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prota_Dash_0: -2080905222
-      Prota_Dash_1: -1743466450
+      Attack2_2: -1128053519
+      Attack2_1: 1347687106
+      Attack2_3: -167437579
+      Attack2_0: -2108620608
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

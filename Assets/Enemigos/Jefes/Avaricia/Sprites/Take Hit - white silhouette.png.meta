@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81c59cd9331399a49b3b8575041ae85f
+guid: 0d916ad068e60a245804689a07f78bde
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 13
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prota_Dash_0
+      name: Take Hit - white silhouette_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 80
+        width: 160
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5c5b016eb848044b515347e4f8b874
-      internalID: -2080905222
+      spriteID: 1e833fe82900dcb4b802e48bc86f8219
+      internalID: 26842260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prota_Dash_1
+      name: Take Hit - white silhouette_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 160
         y: 0
-        width: 120
-        height: 80
+        width: 160
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c8996086685ed64eab1949c08b730ce
-      internalID: -1743466450
+      spriteID: e2038c85201d95c4eaed9a5374051e4d
+      internalID: -1633595227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Take Hit - white silhouette_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1beedde450f52441bc069c8a9f32978
+      internalID: -730755863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Take Hit - white silhouette_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e63cb987d381947b696c5cf27ac79b
+      internalID: 1561252283
       vertices: []
       indices: 
       edges: []
@@ -156,8 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prota_Dash_0: -2080905222
-      Prota_Dash_1: -1743466450
+      Take Hit - white silhouette_3: 1561252283
+      Take Hit - white silhouette_1: -1633595227
+      Take Hit - white silhouette_2: -730755863
+      Take Hit - white silhouette_0: 26842260
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
