@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1208966442917398561}
-    m_Position: {x: 300, y: 120, z: 0}
+    m_State: {fileID: 2614431791999640698}
+    m_Position: {x: 402.88885, y: 130.36038, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,7 +21,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1208966442917398561}
+  m_DefaultState: {fileID: 2614431791999640698}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -44,15 +44,15 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &1208966442917398561
+--- !u!1102 &2614431791999640698
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Prota_Run
-  m_Speed: 1
+  m_Name: Inicial niveles
+  m_Speed: 0.82
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 28f9ca13b106129489552caa390363a0, type: 2}
+  m_Motion: {fileID: 7400000, guid: d235fcb3be3ad6d46a0cd89195b2dbde, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

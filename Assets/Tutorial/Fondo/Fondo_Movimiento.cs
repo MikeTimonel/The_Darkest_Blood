@@ -9,7 +9,7 @@ public class Fondo_Movimiento : MonoBehaviour
     private Vector2 offset;
     private Material material;
     private Rigidbody2D jugadorRB;
-    private void Awake()
+    private void FixedUpdate()
     {
         material = GetComponent<SpriteRenderer>().material;
         jugadorRB = GameObject.FindGameObjectWithTag("Prota").GetComponent<Rigidbody2D>();
