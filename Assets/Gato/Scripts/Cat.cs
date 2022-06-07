@@ -30,7 +30,7 @@ public class Cat : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float distPlayer = Vector2.Distance(transform.position, player.transform.position);
         
@@ -80,6 +80,7 @@ public class Cat : MonoBehaviour
 
         }
         rb.velocity = new Vector2(0, rb.velocity.y);
+
     }
     // Salto del gato
     private void CatJump() {
