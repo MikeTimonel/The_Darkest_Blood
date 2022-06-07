@@ -124,11 +124,11 @@ public class PlayerMovement : MonoBehaviour
             Protagonista.SetBool("Jump", false);
             Protagonista.SetBool("Fall", false);
         }
-        //else if(isOnGround == false)
-        //{
-        //    Protagonista.SetBool("Run", false);
-        //    Protagonista.SetBool("Fall", true);
-        //}
+        else if(isOnGround == false)
+        {
+            Protagonista.SetBool("Run", false);
+            Protagonista.SetBool("Fall", true);
+        }
     }
     private void Healing()
     {

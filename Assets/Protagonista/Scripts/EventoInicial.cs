@@ -12,7 +12,7 @@ public class EventoInicial: MonoBehaviour
         if (coll.gameObject.name == "InicioCollider")
         {
             Protareal.enabled = true;
-            Protacine.SetActive(false);
+            Destroy(Protacine);
             Destroy(Iniciador);
         }
 

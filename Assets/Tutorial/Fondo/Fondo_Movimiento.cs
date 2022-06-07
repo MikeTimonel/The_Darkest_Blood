@@ -10,13 +10,13 @@ public class Fondo_Movimiento : MonoBehaviour
     private Material material;
     private Rigidbody2D jugadorRB;
 
-    private void Update()
+    private void Start()
 
     {
         material = GetComponent<SpriteRenderer>().material;
         jugadorRB = GameObject.FindGameObjectWithTag("Prota").GetComponent<Rigidbody2D>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         offset = (jugadorRB.velocity.x/10f) *velocidadMovimiento * Time.deltaTime;
         material.mainTextureOffset += offset;

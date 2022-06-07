@@ -7,8 +7,7 @@ public class Avariciascript : MonoBehaviour
     public Animator Avaricia;
     public int Ataque;
     public int Vida;
-    // Start is called before the first frame update
-    // Update is called once per frame
+
     void Start()
     {
         StartCoroutine(Ataques());
@@ -34,7 +33,7 @@ public class Avariciascript : MonoBehaviour
     }
     private IEnumerator Ataques()
     {
-        while (Vida != 0)
+        while (Vida > 0)
         {
             yield return new WaitForSeconds(2.1f);
             Ataque = Random.Range(0, 4);
