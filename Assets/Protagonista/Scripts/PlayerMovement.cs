@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
+    public BoxCollider2D avariciacollider;
+    public Avariciascript avariciascript;
 
     [Header("Ataque")]
     
@@ -89,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         isOnGround = Physics2D.OverlapBox(groundController.position, sizeBox, 0f, typeGround);
-        //Movent
+        //Moven't
         Move(horizontalMovement * Time.fixedDeltaTime, jump);
 
         jump = false;
@@ -105,10 +107,19 @@ public class PlayerMovement : MonoBehaviour
             if(colisionador.CompareTag("Enemigo"))
             {
                 colisionador.transform.GetComponent<Avariciascript>().TomarDaño(dañoAtaque);
+                if(avariciascript.Vida <= 0)
+                {
+                    Destroy(avariciacollider);
+                    Finalnivel();
+                }
             }
         }
     }
-
+    private void Finalnivel()
+    {
+        Protagonista.SetBool("Final", true);
+        speedMovement = 0;
+    }
     private void Move(float move, bool jumped) {
         Vector3 currentSpeed = new Vector2(move, rb2D.velocity.y);
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, currentSpeed, ref speed, smoothingMoving);

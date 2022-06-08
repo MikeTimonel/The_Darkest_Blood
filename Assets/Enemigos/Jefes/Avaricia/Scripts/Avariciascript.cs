@@ -6,7 +6,7 @@ public class Avariciascript : MonoBehaviour
 {
     public Animator Avaricia;
     public int Ataque;
-    [SerializeField] private int Vida;
+    [SerializeField] public int Vida;
     public bool hit = false;
     void Start()
     {

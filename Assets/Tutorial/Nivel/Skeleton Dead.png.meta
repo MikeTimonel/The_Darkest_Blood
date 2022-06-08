@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0da1c0ab992cf7349b886c922882b7d4
+guid: d2190c1d710638546a7a2a09e9a8c892
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10.2
+  spritePixelsToUnits: 11.35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,34 +104,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: beggar_2_0
+      name: Skeleton Dead_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 462
         y: 0
-        width: 34
-        height: 34
+        width: 33
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c8e25f31e88c5e469c618ca9152eee6
-      internalID: -712785331
+      spriteID: 7d0e1b4482fafb346a3ebf87de772b28
+      internalID: -1721226976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beggar_2_1
+      name: Skeleton Dead_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 429
         y: 0
-        width: 34
-        height: 34
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7a855dc521421b48a8221673b17320f
-      internalID: 350806064
+      spriteID: 1a289f1684e8b334eaf1860458059ccb
+      internalID: 2101359254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beggar_2_2
+      name: Skeleton Dead_2
       rect:
         serializedVersion: 2
-        x: 68
+        x: 396
         y: 0
-        width: 34
-        height: 34
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136c92b38b2231a4a9de85c5996936dd
-      internalID: 316677574
+      spriteID: 70a83d1d10fcba8418aabbe5281df5f1
+      internalID: 1397984117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beggar_2_3
+      name: Skeleton Dead_3
       rect:
         serializedVersion: 2
-        x: 102
+        x: 363
         y: 0
-        width: 34
-        height: 34
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,29 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45949a765932c5047bea087897b5f659
-      internalID: 668495579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: beggar_2_4
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 0
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 872c34397fb78b64f9c9d7bb5c753011
-      internalID: 1413383625
+      spriteID: 9819db1f47057fd41a7df1381cb44796
+      internalID: 1197400829
       vertices: []
       indices: 
       edges: []
@@ -219,11 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      beggar_2_2: 316677574
-      beggar_2_0: -712785331
-      beggar_2_3: 668495579
-      beggar_2_4: 1413383625
-      beggar_2_1: 350806064
+      Skeleton Dead_3: 1197400829
+      Skeleton Dead_1: 2101359254
+      Skeleton Dead_2: 1397984117
+      Skeleton Dead_0: -1721226976
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
