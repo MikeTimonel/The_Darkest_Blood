@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/beggar_cafe_0.controller.meta
+guid: cae259cb59b2c614e89735506cc262d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+========
+guid: e263e69fea439b642b29b3c8940c7d54
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>>> Monsters:Assets/NPCs/Vagabundo/Animacion/Idle.anim.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

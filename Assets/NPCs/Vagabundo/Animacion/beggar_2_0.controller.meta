@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 61b6b6ffced57ac44b7433403ae3224e
+<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/beggar_2_0.controller.meta
+guid: 85c20264b3141914e857ca5e5759312a
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: 6475d8e2c392ef74fa7ee0e2cb6143a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>>> Monsters:Assets/NPCs/Vagabundo/Animacion/Scary.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: e90bcc80ef163cd49bb604c0848cb4a7
+<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_2.anim.meta
+guid: fe659b35e8c5ab44bbebea6126e5f9dd
+========
+guid: 62ebeec2c4e98864fb8678cc0b502afc
+>>>>>>>> Monsters:Assets/NPCs/Vagabundo/Animacion/Cleaning.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

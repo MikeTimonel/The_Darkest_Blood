@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 8aa729c72e99ee04ca63a4d0b03928af
+<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_cafe.anim.meta
+guid: 30b62895fca6a8e4a95a1f8f60056e69
+========
+guid: da2baaf48e6947044b79cf6864247a0f
+>>>>>>>> Monsters:Assets/NPCs/Vagabundo/Animacion/Jumping.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

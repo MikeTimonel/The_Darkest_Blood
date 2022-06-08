@@ -55,3 +55,6 @@ TagManager:
   - name: Protagonista
     uniqueID: 3459463679
     locked: 0
+  - name: Enemigos
+    uniqueID: 816157603
+    locked: 0
