@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //private PotionCount potions;
-    public float life;
-    [SerializeField] float maxHealth;
+    public int life;
+    [SerializeField] int maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
     public BoxCollider2D avariciacollider;

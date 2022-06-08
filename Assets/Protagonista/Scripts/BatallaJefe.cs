@@ -11,11 +11,11 @@ public class BatallaJefe : MonoBehaviour
     public Avariciascript jefescript;
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //if (coll.gameObject.name == "Activador2")
-        //{
-        //    camarascript.enabled = false;
-        //    Destroy(Activador2);
-        //}
+        if (coll.gameObject.name == "Activador2")
+        {
+            //camarascript.enabled = false;
+            //Destroy(Activador2);
+        }
         if (coll.gameObject.name == "Activador3")
         {
             camarascript.enabled = false;
