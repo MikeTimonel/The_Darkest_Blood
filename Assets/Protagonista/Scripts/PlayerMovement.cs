@@ -9,7 +9,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
+
+    [Header("Ataque")]
     
+    [SerializeField] private Transform AtaqueC;
+    [SerializeField] private float radioAtaque;
+    private bool canAttack = true;
+    [SerializeField] private int dañoAtaque;
+    private float attackCooldown = 0.09f;
+    private bool isAttacking;
+
     [Header("Movimiento")]
 
     private float horizontalMovement = 0f;
@@ -54,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Healing();
+        //Healing();
         if(isDashing){
             return;
         }
@@ -68,6 +77,10 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift) && canDash){
             StartCoroutine(Dash());
         }
+        if (Input.GetButtonDown("Fire1") && canAttack)
+        {
+            Attack();
+        }
     }
 
     void FixedUpdate(){
@@ -80,6 +93,20 @@ public class PlayerMovement : MonoBehaviour
         Move(horizontalMovement * Time.fixedDeltaTime, jump);
 
         jump = false;
+    }
+
+    private void Attack()
+    {
+        StartCoroutine(Ataques());
+
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(AtaqueC.position, radioAtaque);
+        foreach (Collider2D colisionador in objetos)
+        {
+            if(colisionador.CompareTag("Enemigo"))
+            {
+                colisionador.transform.GetComponent<Avariciascript>().TomarDaño(dañoAtaque);
+            }
+        }
     }
 
     private void Move(float move, bool jumped) {
@@ -111,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
             Protagonista.SetBool("Idle", false);
             rb2D.AddForce(new Vector2(0f, jumpForce));
         }
-        if (isOnGround == true && move ==0)
+        if (isOnGround == true && move ==0 && isAttacking ==false)
         {
             Protagonista.SetBool("Fall", false);
             Protagonista.SetBool("Run", false);
@@ -147,6 +174,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnDrawGizmos(){
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(AtaqueC.position, radioAtaque);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundController.position, sizeBox);
     }
@@ -167,5 +196,18 @@ public class PlayerMovement : MonoBehaviour
         Protagonista.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+    private IEnumerator Ataques()
+    {
+        canAttack = false;
+        isAttacking = true;
+        Protagonista.SetBool("Idle", false);
+        Protagonista.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.4f);
+        Protagonista.SetBool("Idle", true);
+        Protagonista.SetBool("Attack", false);
+        isAttacking = false;
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 }

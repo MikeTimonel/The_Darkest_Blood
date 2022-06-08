@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Prota
+  - Enemigo
   layers:
   - Default
   - TransparentFX
