@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Prota
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Cat
+  - Ground
+  - 
   - 
   - 
   - 
@@ -41,15 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 3421568899
+  - name: Fondo
+    uniqueID: 1723788509
     locked: 0
-  - name: Floor
-    uniqueID: 3580820073
+  - name: Adornos
+    uniqueID: 2810353093
     locked: 0
-  - name: Player
-    uniqueID: 1935456199
+  - name: Ground
+    uniqueID: 734688881
     locked: 0
-  - name: UI
-    uniqueID: 848625369
+  - name: Protagonista
+    uniqueID: 3459463679
     locked: 0
