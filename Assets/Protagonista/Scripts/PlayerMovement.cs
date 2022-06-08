@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //private PotionCount potions;
+    private PotionCount potions;
     public float life;
     [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         horizontalMovement = Input.GetAxisRaw("Horizontal") * speedMovement;
-
+        
         if(Input.GetButtonDown("Jump")){
             jump = true;
         }

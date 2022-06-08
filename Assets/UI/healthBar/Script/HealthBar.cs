@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    
+
     private Image healthBar;
     private Image damageBar;
     private float damagedHealthBarTimer;
-    private Player player;
+    private PlayerMovement player;
 
     [SerializeField] private float currentHealth;
     private float maxHealth;
@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     {
         healthBar = transform.Find("HealthBar").GetComponent<Image>();
         damageBar = transform.Find("DamageBar").GetComponent<Image>();
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerMovement>();
         maxHealth = player.life;
     }
 
