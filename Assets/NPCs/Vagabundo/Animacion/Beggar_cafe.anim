@@ -6,11 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_cafe.anim
   m_Name: Beggar_cafe
-========
-  m_Name: Eye_Death
->>>>>>>> Monsters:Assets/Enemigos/Normales/Ojo_Volador/Animaciones/Eye_Death.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24,7 +20,6 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_cafe.anim
       value: {fileID: 853380806, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - time: 0.13333334
       value: {fileID: -1225205902, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
@@ -34,15 +29,6 @@ AnimationClip:
       value: {fileID: 1598851260, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - time: 0.53333336
       value: {fileID: -1094559702, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
-========
-      value: {fileID: -362452822, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - time: 0.11666667
-      value: {fileID: -230336846, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - time: 0.23333333
-      value: {fileID: 762877915, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - time: 0.35
-      value: {fileID: -1381094562, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
->>>>>>>> Monsters:Assets/Enemigos/Normales/Ojo_Volador/Animaciones/Eye_Death.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -62,28 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_cafe.anim
     - {fileID: 853380806, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - {fileID: -1225205902, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - {fileID: 761708816, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - {fileID: 1598851260, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
     - {fileID: -1094559702, guid: b604fa3c55aef6d4d91084f62a8af5c5, type: 3}
-========
-    - {fileID: -362452822, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - {fileID: -230336846, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - {fileID: 762877915, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
-    - {fileID: -1381094562, guid: b8423975471eda746b98a88cb31f1c11, type: 3}
->>>>>>>> Monsters:Assets/Enemigos/Normales/Ojo_Volador/Animaciones/Eye_Death.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_cafe.anim
     m_StopTime: 0.55
-========
-    m_StopTime: 0.36666667
->>>>>>>> Monsters:Assets/Enemigos/Normales/Ojo_Volador/Animaciones/Eye_Death.anim
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

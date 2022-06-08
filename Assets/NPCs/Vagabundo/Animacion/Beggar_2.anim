@@ -6,11 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_2.anim
   m_Name: Beggar_2
-========
-  m_Name: Mushroom_Death
->>>>>>>> Monsters:Assets/Enemigos/Normales/Hongo/Animaciones/Mushroom_Death.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24,7 +20,6 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_2.anim
       value: {fileID: -712785331, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - time: 0.13333334
       value: {fileID: 668495579, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
@@ -34,17 +29,6 @@ AnimationClip:
       value: {fileID: 350806064, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - time: 0.53333336
       value: {fileID: -712785331, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
-========
-      value: {fileID: 945584803, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - time: 0.11666667
-      value: {fileID: 676009471, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - time: 0.23333333
-      value: {fileID: 1507037828, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - time: 0.35
-      value: {fileID: 409002678, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - time: 0.46666667
-      value: {fileID: 1877715000, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
->>>>>>>> Monsters:Assets/Enemigos/Normales/Hongo/Animaciones/Mushroom_Death.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -64,29 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_2.anim
     - {fileID: -712785331, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - {fileID: 668495579, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - {fileID: 316677574, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - {fileID: 350806064, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
     - {fileID: -712785331, guid: 0da1c0ab992cf7349b886c922882b7d4, type: 3}
-========
-    - {fileID: 945584803, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - {fileID: 676009471, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - {fileID: 1507037828, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - {fileID: 409002678, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
-    - {fileID: 1877715000, guid: c077055d52ebb5047a27b6b6a5c899e1, type: 3}
->>>>>>>> Monsters:Assets/Enemigos/Normales/Hongo/Animaciones/Mushroom_Death.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<<< HEAD:Assets/NPCs/Vagabundo/Animacion/Beggar_2.anim
     m_StopTime: 0.55
-========
-    m_StopTime: 0.48333335
->>>>>>>> Monsters:Assets/Enemigos/Normales/Hongo/Animaciones/Mushroom_Death.anim
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

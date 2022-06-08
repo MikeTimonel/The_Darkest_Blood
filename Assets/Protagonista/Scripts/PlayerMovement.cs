@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-<<<<<<< HEAD
+
     //private PotionCount potions;
     public int life;
     [SerializeField] int maxHealth;
-=======
-    private PotionCount potions;
-    public float life;
-    [SerializeField] float maxHealth;
->>>>>>> Monsters
+
+ 
+
     private Rigidbody2D rb2D;
     public Animator Protagonista;
     public BoxCollider2D avariciacollider;
