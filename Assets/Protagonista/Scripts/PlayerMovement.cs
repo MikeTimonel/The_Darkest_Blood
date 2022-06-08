@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //private PotionCount potions;
+    public PotionCount potions;
     public float life;
-    //[SerializeField] int maxHealth;
+    [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
     public BoxCollider2D avariciacollider;
@@ -56,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //potions = FindObjectOfType<PotionCount>();
-        //maxHealth = 100;
+        potions = FindObjectOfType<PotionCount>();
+        maxHealth = life;
         Protagonista = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Healing();
+        Healing();
         if(isDashing){
 
             return;
@@ -190,12 +190,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Healing()
     {
-        //if (Input.GetKeyDown("Q") && potions.potions > 0 && life < maxHealth)
-        //{
-        //    life += 40;
-        //    potions.potions--;
+        if (Input.GetKeyDown(KeyCode.Q) && potions.potions > 0 && life < maxHealth)
+        {
+            life += 25;
+            potions.potions--;
 
-        //}
+        }
     }
     private void Rotate(){
         isRightMove = !isRightMove;
