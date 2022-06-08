@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //private PotionCount potions;
-    public int life;
-    [SerializeField] int maxHealth;
+    public float life;
+    //[SerializeField] int maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
     public BoxCollider2D avariciacollider;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalMovement = 0f;
    
-    [SerializeField] private float speedMovement;
+    [SerializeField] public float speedMovement;
 
     [Range(0.0f, 0.3f)][SerializeField] private float smoothingMoving;
 
@@ -47,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24f;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingPower = 26f;
+    private float dashingTime = 0.33f;
+    private float dashingCooldown = 0.87f;
 
 
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //potions = FindObjectOfType<PotionCount>();
-        //maxHealth = life;
+        //maxHealth = 100;
         Protagonista = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
     }
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Healing();
         if(isDashing){
+
             return;
         }
 
@@ -81,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
+            Protagonista.SetBool("Idle", false);
             Attack();
         }
     }
@@ -115,9 +117,27 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    public void TomarDaño(float daño)
+    {
+        if (isDashing == true)
+        {
+            daño = 0;
+        } else if (life <= 0)
+        {
+            Protagonista.SetBool("Death", true);
+        }
+        else
+        {
+            Protagonista.SetBool("Idle", false);
+            Protagonista.SetBool("Hit", true);
+
+            StartCoroutine(Esperar());
+        }
+        life -= daño;
+    }
     private void Finalnivel()
     {
-        Protagonista.SetBool("Final", true);
+        //Protagonista.SetBool("Final", true);
         speedMovement = 0;
     }
     private void Move(float move, bool jumped) {
@@ -203,8 +223,8 @@ public class PlayerMovement : MonoBehaviour
         rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
         rb2D.gravityScale = originalGravity;
-        isDashing = false;
         Protagonista.SetBool("Dash", false);
+        isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
@@ -215,10 +235,14 @@ public class PlayerMovement : MonoBehaviour
         Protagonista.SetBool("Idle", false);
         Protagonista.SetBool("Attack", true);
         yield return new WaitForSeconds(0.4f);
-        Protagonista.SetBool("Idle", true);
         Protagonista.SetBool("Attack", false);
         isAttacking = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+    private IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(0.09f);
+        Protagonista.SetBool("Hit", false);
     }
 }

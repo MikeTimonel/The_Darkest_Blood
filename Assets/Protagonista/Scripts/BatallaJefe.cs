@@ -7,6 +7,7 @@ public class BatallaJefe : MonoBehaviour
 
     public GameObject Activador3;
     public GameObject Activador2;
+    public GameObject Bloqueo2;
     public Camara camarascript;
     public Avariciascript jefescript;
     void OnCollisionEnter2D(Collision2D coll)
@@ -20,6 +21,7 @@ public class BatallaJefe : MonoBehaviour
         {
             camarascript.enabled = false;
             jefescript.enabled = true;
+            Bloqueo2.SetActive(true);
             Destroy(Activador3);
         }
     }
