@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CinematicaInicial/CinematicaInicial.unity
     guid: 4b65b97dc0ab3a646aade33fabd3002d
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: "Assets/Scenes/Men\xFA/Menu.unity"
     guid: 57b10259e1166724f98666e00f1eb7f4
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial.unity
