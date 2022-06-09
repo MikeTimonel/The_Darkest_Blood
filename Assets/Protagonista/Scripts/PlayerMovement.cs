@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,13 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator Protagonista;
     public BoxCollider2D avariciacollider;
     public Avariciascript avariciascript;
+    public GameOver GameOverScreen;
+    [SerializeField] private int sceneNumber;
 
     [Header("Ataque")]
     
     [SerializeField] private Transform AtaqueC;
     [SerializeField] private float radioAtaque;
     private bool canAttack = true;
-    [SerializeField] private int dañoAtaque;
+    [SerializeField] private int daÃ±oAtaque;
     private float attackCooldown = 0.09f;
     private bool isAttacking;
 
@@ -108,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(colisionador.CompareTag("Enemigo"))
             {
-                colisionador.transform.GetComponent<Avariciascript>().TomarDaño(dañoAtaque);
+                colisionador.transform.GetComponent<Avariciascript>().TomarDaÃ±o(daÃ±oAtaque);
                 if(avariciascript.Vida <= 0)
                 {
                     Destroy(avariciacollider);
@@ -117,14 +120,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    public void TomarDaño(float daño)
+    public async void TomarDaÃ±o(float daÃ±o)
     {
         if (isDashing == true)
         {
-            daño = 0;
+            daÃ±o = 0;
         } else if (life <= 0)
         {
             Protagonista.SetBool("Death", true);
+            await Task.Delay(1700);
+            GameOverScreen.Setup(sceneNumber);
         }
         else
         {
@@ -133,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
             StartCoroutine(Esperar());
         }
-        life -= daño;
+        life -= daÃ±o;
     }
     private void Finalnivel()
     {
