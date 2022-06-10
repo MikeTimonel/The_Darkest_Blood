@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement2 : MonoBehaviour
 {
     public PotionCount potions;
     public float life;
+    public SpriteRenderer agualimpia;
+    public GameObject victory;
     [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
@@ -113,6 +116,7 @@ public class PlayerMovement2 : MonoBehaviour
                 if (envidiascript.Vida <= 0)
                 {
                     Destroy(envidiacollider);
+                    agualimpia.enabled = true;
                     Finalnivel();
                 }
             }
@@ -139,10 +143,12 @@ public class PlayerMovement2 : MonoBehaviour
         }
         life -= daño;
     }
-    private void Finalnivel()
+    private async void Finalnivel()
     {
-        //Protagonista.SetBool("Final", true);
         speedMovement = 0;
+        victory.SetActive(true);
+        await Task.Delay(4500);
+        SceneManager.LoadScene("Credits");
     }
     private void Move(float move, bool jumped)
     {

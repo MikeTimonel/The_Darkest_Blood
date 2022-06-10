@@ -4,56 +4,17 @@ using UnityEngine;
 
 public class Tuto : MonoBehaviour
 {
-    public Animator animadorgato;
-    public PlayerMovement protagonistascript;
-
+    public GameObject gatito;
 
     void FixedUpdate()
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name == "Numero1")
+        if (collider.gameObject.name == "Protagonista")
         {
-            animadorgato.SetInteger("Tuto", 1);
-
+            gatito.SetActive(true);
         }
-        else if (collider.gameObject.name == "Numero2")
-        {
-            
-        }
-        else if (collider.gameObject.name == "Numero3")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero4")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero5")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero6")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero7")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero8")
-        {
-
-        }
-        else if (collider.gameObject.name == "Numero9")
-        {
-
-        }
-    }
-    private IEnumerator rutina1()
-    {
-        yield return new WaitForSeconds(5f);
     }
 }
