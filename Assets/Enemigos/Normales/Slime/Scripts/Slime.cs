@@ -8,7 +8,7 @@ public class Slime : MonoBehaviour
     [SerializeField] float followRange;
     [SerializeField] float attackRange;
     [SerializeField] float vida;
-    [SerializeField] float dañoAtaque;
+    [SerializeField] float daÃ±oAtaque;
 
     [Header("Movimiento")]
     [SerializeField] float velocidadMovimiento;
@@ -30,6 +30,7 @@ public class Slime : MonoBehaviour
     {
         slimeRb = GetComponent<Rigidbody2D>();
         mAnimator = gameObject.GetComponent<Animator>();
+        slimeCollider = GetComponent<BoxCollider2D>();
         reproducir.Play();
     }
 
@@ -71,7 +72,7 @@ public class Slime : MonoBehaviour
             }
             else if (transform.position.x < player.transform.position.x)
             {
-                Walking(velocidadMovimiento, 180);
+                Walking(velocidadMovimiento, 180);               
             }
         }
 
@@ -82,11 +83,11 @@ public class Slime : MonoBehaviour
         {
             if (transform.position.x > player.transform.position.x)
             {
-                StartCoroutine("Attack", -10);
+                StartCoroutine("Attack", -5);
             }
             else if (transform.position.x < player.transform.position.x)
             {
-                StartCoroutine("Attack", 10);
+                StartCoroutine("Attack", 5);
             }
         }
     }
@@ -103,7 +104,7 @@ public class Slime : MonoBehaviour
     private IEnumerator Attack(float x)
     {
         isAttacking = true;
-        mAnimator.SetBool("IsRunning", false);
+        mAnimator.SetBool("IsWalking", false);
         mAnimator.SetBool("IsIdle", false);
         slimeRb.velocity = new Vector2(0, 0);
         mAnimator.SetTrigger("Attack");
@@ -113,18 +114,18 @@ public class Slime : MonoBehaviour
         isAttacking = false;
     }
 
-    public void TomarDaño(int daño)
+    public void TomarDaÃ±o(int daÃ±o)
     {
 
-        vida -= daño;
-        StartCoroutine("Dañado");
+        vida -= daÃ±o;
+        StartCoroutine("DaÃ±ado");
         if (vida <= 0)
         {
             StartCoroutine("Morir");
         }
     }
 
-    private IEnumerator Dañado()
+    private IEnumerator DaÃ±ado()
     {
         mAnimator.SetTrigger("Damaged");
         slimeRb.velocity = new Vector2(0, 0);
@@ -148,7 +149,7 @@ public class Slime : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Prota"))
         {
-            collision.transform.GetComponent<PlayerMovement>().TomarDaño(dañoAtaque);
+            collision.transform.GetComponent<PlayerMovement>().TomarDaÃ±o(daÃ±oAtaque);
         }
     }
 }
