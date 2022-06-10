@@ -9,9 +9,19 @@ public class Avariciascript : MonoBehaviour
     [SerializeField] private float radioAtaque;
     [SerializeField] private float dañoAtaque;
     public PlayerMovement playerscript;
-    public int Ataque;
+    private int Ataque;
     [SerializeField] public int Vida;
     public bool hit = false;
+
+    [Header("Sonidos")]
+
+    [SerializeField] private AudioSource reproducir;
+    [SerializeField] private AudioClip audioAtaque1;
+    [SerializeField] private AudioClip audioAtaque2;
+    [SerializeField] private AudioClip audioAtaque3;
+    [SerializeField] private AudioClip audioDaño;
+    [SerializeField] private AudioClip audioMuerte;
+
     void Start()
     {
         StartCoroutine(Ataques());
