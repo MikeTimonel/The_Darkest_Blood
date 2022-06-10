@@ -11,7 +11,7 @@ public class Vacio : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
     }
 
-    void OnTriggerEnter2D(Collision2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Prota"))
         {
