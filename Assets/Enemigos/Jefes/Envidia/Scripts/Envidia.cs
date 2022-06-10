@@ -8,8 +8,10 @@ public class Envidia : MonoBehaviour
     [SerializeField] private Transform AtaqueEnvidia;
     [SerializeField] private float radioAtaque;
     [SerializeField] private float damageAtaque;
+    public GameObject firebomb;
     public PlayerMovement2 playerscript;
     public int Ataque;
+    public CircleCollider2D collfire;
     [SerializeField] public int Vida;
     public bool hit = false;
     // Start is called before the first frame update
@@ -28,17 +30,8 @@ public class Envidia : MonoBehaviour
         }
         else if (Ataque == 1)
         {
+            firebomb.SetActive(true);
             Envidiaanimator.SetInteger("Ataque", 1);
-            Attacks();
-        }
-        else if (Ataque == 2)
-        {
-            Envidiaanimator.SetInteger("Ataque", 2);
-            Attacks();
-        }
-        else
-        {
-            Envidiaanimator.SetInteger("Ataque", 3);
             Attacks();
         }
     }
@@ -59,7 +52,7 @@ public class Envidia : MonoBehaviour
         while (Vida > 0 && playerscript.life > 0)
         {
             yield return new WaitForSeconds(1.39f);
-            Ataque = Random.Range(0, 4);
+            Ataque = Random.Range(0, 2);
             yield return new WaitForSeconds(0.3f);
             Ataque = 0;
         }
@@ -68,6 +61,7 @@ public class Envidia : MonoBehaviour
     private void Attacks()
     {
         StartCoroutine(Esperar());
+
         Collider2D[] objetos = Physics2D.OverlapCircleAll(AtaqueEnvidia.position, radioAtaque);
         foreach (Collider2D colisionador in objetos)
         {
@@ -96,7 +90,11 @@ public class Envidia : MonoBehaviour
     }
     private IEnumerator Esperar()
     {
-        yield return new WaitForSeconds(0.49f);
+        yield return new WaitForSeconds(0.67f);
+        collfire.enabled = true;
+        yield return new WaitForSeconds(0.33f);
+        collfire.enabled = false;
+        firebomb.SetActive(false);
     }
     private IEnumerator Finalfinal()
     {

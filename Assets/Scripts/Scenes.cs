@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Scenes : MonoBehaviour
 {
+    public Animator fondo;
+    public GameObject canvasS;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,18 +20,26 @@ public class Scenes : MonoBehaviour
         
     }
 
-    public void StartGame() {
-
+    public async void StartGame() {
+        canvasS.SetActive(false);
+        fondo.SetInteger("Inicio", 1);
+        await Task.Delay(2900);
         SceneManager.LoadScene("Tutorial");
-    
+        Destroy(this.gameObject);
     }
-    public void CloseGame() {
-
+    public async void CloseGame() {
+        canvasS.SetActive(false);
+        fondo.SetInteger("Inicio", 1);
+        await Task.Delay(2900);
         Application.Quit();
+        Destroy(this.gameObject);
     }
-    public void Creditsscreen()
+    public async void Creditsscreen()
     {
-
-        SceneManager.LoadScene("4");
+        canvasS.SetActive(false);
+        fondo.SetInteger("Inicio", 1);
+        await Task.Delay(2900);
+        SceneManager.LoadScene(4);
+        Destroy(this.gameObject);
     }
 }

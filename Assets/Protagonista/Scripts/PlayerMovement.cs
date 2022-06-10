@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     public PotionCount potions;
     public float life;
+    public GameObject victory;
     [SerializeField] float maxHealth;
     private Rigidbody2D rb2D;
     public Animator Protagonista;
@@ -186,10 +187,12 @@ public class PlayerMovement : MonoBehaviour
         }
         life -= daño;
     }
-    private void Finalnivel()
+    private async void Finalnivel()
     {
-        //Protagonista.SetBool("Final", true);
         speedMovement = 0;
+        victory.SetActive(true);
+        await Task.Delay(4500);
+        SceneManager.LoadScene("Nivel1");
     }
     private void Move(float move, bool jumped) {
         Vector3 currentSpeed = new Vector2(move, rb2D.velocity.y);
