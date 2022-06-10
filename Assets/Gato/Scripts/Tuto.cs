@@ -10,7 +10,7 @@ public class Tuto : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.name == "Protagonista")
         {
