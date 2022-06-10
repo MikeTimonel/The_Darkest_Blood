@@ -272,7 +272,8 @@ MonoBehaviour:
     DESIGNERS\nMiguel Angel Timote Moya\nRichard Lion Guevara Puerta\nAndr\xE9s Felipe
     Jim\xE9nez Albornoz\nJuan Sebastian Mora Mu\xF1oz\n\n\n\nGAME DEVELOPERS\nMiguel
     Angel Timote Moya\nAndres Felipe Jim\xE9nez Albornoz\nRichard Lion Guevara Puerta\n\n\n\nARTISTS
-    & GRAPHIC DESIGNERS\nJuan Sebastian Mora Mu\xF1oz\nMiguel Angel Timote Moya\n\n"
+    & GRAPHIC DESIGNERS\nJuan Sebastian Mora Mu\xF1oz\nMiguel Angel Timote Moya\n\nAUDIO
+    VISUAL RESOURCES\nhttps://itch.io/\nhttps://pixabay.com/\nhttps://quicksounds.com/\n"
 --- !u!222 &234473434
 CanvasRenderer:
   m_ObjectHideFlags: 0
