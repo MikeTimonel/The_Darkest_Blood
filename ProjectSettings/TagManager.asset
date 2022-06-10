@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Prota
   - Enemigo
+  - Jefe
+  - Hongo
+  - Ojo
+  - Slime
   layers:
   - Default
   - TransparentFX
