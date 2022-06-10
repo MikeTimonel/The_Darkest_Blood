@@ -1929,7 +1929,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5214443812890175156, guid: 264a9b103afa1084f9a70c5ed32259a8, type: 3}
       propertyPath: vida
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5214443812890175156, guid: 264a9b103afa1084f9a70c5ed32259a8, type: 3}
       propertyPath: player
@@ -1937,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 1673669510}
     - target: {fileID: 5214443812890175156, guid: 264a9b103afa1084f9a70c5ed32259a8, type: 3}
       propertyPath: "da\xF1oAtaque"
-      value: 25
+      value: 12.7
       objectReference: {fileID: 0}
     - target: {fileID: 5214443812890175156, guid: 264a9b103afa1084f9a70c5ed32259a8, type: 3}
       propertyPath: velocidadMovimiento

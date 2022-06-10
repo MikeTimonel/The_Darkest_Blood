@@ -25,7 +25,10 @@ public class Scenes : MonoBehaviour
     public void CloseGame() {
 
         Application.Quit();
+    }
+    public void Creditsscreen()
+    {
 
-    
+        SceneManager.LoadScene("4");
     }
 }
